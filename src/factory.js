@@ -3,13 +3,7 @@
  * 這個模式經常被使用在 【同時管理與操作，多個有相似特性卻仍不同的物件集合】。
 */
 
-interface FactoryType {
-  fly: () => void;
-}
-
 class Factory {
-  createPlane: <T>(type: string) => FactoryType & T;
-
   constructor() {
     this.createPlane = function (type) {
       let ball;
@@ -31,8 +25,6 @@ class Factory {
 
 class Airplane {
   static type = 'airplane';
-  name: string;
-  speedDown: () => string;
 
   constructor() {
     this.name = Airplane.type;
@@ -44,9 +36,6 @@ class Airplane {
 
 class JIT {
   static type = 'JIT';
-  name: string;
-  speedUp: () => string;
-  fight: () => string;
 
   constructor() {
     this.name = JIT.type;
@@ -60,8 +49,8 @@ class JIT {
 }
 
 const factory = new Factory();
-const myAirplane = factory.createPlane<Airplane>(Airplane.type);
-const myJIT = factory.createPlane<JIT>(JIT.type);
+const myAirplane = factory.createPlane(Airplane.type);
+const myJIT = factory.createPlane(JIT.type);
 
 // In the Factory create shared method or property to instance.
 console.log(myAirplane.fly());

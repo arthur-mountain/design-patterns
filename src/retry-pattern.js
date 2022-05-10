@@ -1,10 +1,4 @@
-type Props<ApiResponse> = {
-  maxRetryNum: number;
-  retryDelayMs: number;
-  apiCallback: () => ApiResponse;
-}
-
-const retryFunc = async <T>({ maxRetryNum = 3, retryDelayMs, apiCallback }: Props<T>) => {
+const retryFunc = async ({ maxRetryNum = 3, retryDelayMs, apiCallback }) => {
   if (!apiCallback) {
     console.warn("With out api callback function")
     return;
@@ -34,7 +28,7 @@ const retryFunc = async <T>({ maxRetryNum = 3, retryDelayMs, apiCallback }: Prop
   return resp;
 }
 
-async function sleep(delay: number) {
+async function sleep(delay) {
   return new Promise(resolve => {
     setTimeout(resolve, delay)
   })
@@ -57,7 +51,7 @@ const apiCallback = (_params = null) => {
 }
 
 const testGetRetryResp = async () => {
-  const resp = await retryFunc<any>({ maxRetryNum: 10, retryDelayMs: 1000, apiCallback: apiCallback() });
+  const resp = await retryFunc({ maxRetryNum: 10, retryDelayMs: 1000, apiCallback: apiCallback() });
   console.log("🚀 ~ file: retry-pattern.js ~ line 52 ~ resp", resp)
 }
 testGetRetryResp()

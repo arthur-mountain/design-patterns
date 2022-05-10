@@ -5,9 +5,8 @@
  */
 
 class Singleton {
-  private static instance: Singleton;
 
-  constructor(public data = {}) {
+  constructor(data = {}) {
     // condition: Is instance exist?
     if (Singleton.instance) {
       return Singleton.instance;
