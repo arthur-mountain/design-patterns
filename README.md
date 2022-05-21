@@ -42,6 +42,10 @@ Front-End design patterns ( JS design patterns )
     透過中介介面(adapter interface)的轉換，我們在不修改主程式的情況下，能夠以相同的邏輯來直接使用兩種不同的物件
     EX. 主程式的設計一開始以 firstApi(A物件) 為主，之後因為 secondApi (B物件) 和 A物件 不一樣，因此透過【中介介面來轉換B物件】，使得【主程式可以在不被修改】的情況下，【間接使用中介介面】(相同於間接地使用B物件)
 
-####   Decorator Pattern
+####  Decorator Pattern
     對已存在的類別，動態【增加行為或者功能】。
     EX. 將以存在的類別，將它藉由傳遞 reference 進行【加工添加方法或屬性】後返回
+
+####  Facade Pattern
+    提供統一、且較簡單、公開對外的介面(封裝後提供給外部使用)。
+    EX. 透過一個介面【封裝】所有【不同的類別或介面】後提供 api 給外部使用。
