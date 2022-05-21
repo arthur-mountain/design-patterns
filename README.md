@@ -36,3 +36,8 @@ Front-End design patterns ( JS design patterns )
     父類別(publish) 透過訂閱(subcribe)，管理多個的物件(observer)，
     當前自己狀態改變時，通知(間接觸發)所有訂閱物件(observer)更新或執行相對應的動作或行為
     EX. 父類別(publish)管理(訂閱)多個物件(observer)，當父類別(publish)狀態改變，則所以相依的物件(observer)接會被通知。
+
+####  Adapter Pattern
+    物件間的相容，
+    透過中介介面(adapter interface)的轉換，我們在不修改主程式的情況下，能夠以相同的邏輯來直接使用兩種不同的物件
+    EX. 主程式的設計一開始以 firstApi(A物件) 為主，之後因為 secondApi (B物件) 和 A物件 不一樣，因此透過【中介介面來轉換B物件】，使得【主程式可以在不被修改】的情況下，【間接使用中介介面】(相同於間接地使用B物件)
