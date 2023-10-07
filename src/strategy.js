@@ -15,7 +15,7 @@
 /**
  * interface Transport {
  *   spendTime:number;
- *   travelTime:()=>void;
+ *   travelTime: () => void;
  * }
 */
 

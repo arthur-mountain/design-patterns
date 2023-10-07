@@ -53,9 +53,9 @@ class Tester extends Employee {
 }
 
 // usage
-const dev = new Developer('dali', 10000000000);
-console.log(dev.getPaid()); // 'dali got paid 10000000000'
-console.log(dev.work()); // 'dali handles application development'
+const dev = new Developer('nicole', 10000000000);
+console.log(dev.getPaid()); // 'nicole got paid 10000000000'
+console.log(dev.work()); // 'nicole handles application development'
 
 const tester = new Tester('arthur', 90000);
 console.log(tester.getPaid()); // 'arthur got paid 90000'
